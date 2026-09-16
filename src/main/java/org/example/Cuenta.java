@@ -51,7 +51,7 @@ public class Cuenta {
     }
 
     public void depositar(long valor) {
-        if (valor < 0) {
+        if (valor <= 0) {
             throw new ValorInvalidoException("El valor a depositar es negativo");
         }
         this.saldo += valor; //this.saldo = this.saldo + valor;
@@ -59,12 +59,16 @@ public class Cuenta {
 
     public void retirar(long valor) {
         if (valor > this.saldo) {
-            throw new ValorInvalidoException("El valor a retirar es mayor al saldo de tu cuenta");
+            throw new ValorInvalidoException("El valor a retirar no puede ser mayor al saldo de tu cuenta");
         }
 
         if (valor < 0) {
-            throw new ValorInvalidoException("El valor a retirar es negativo");
+            throw new ValorInvalidoException("El valor a retirar no puede ser negativo");
+        }else if(valor == 0)   {
+            throw new ValorInvalidoException("El valor a retirar no puede ser cero");
         }
+
+
         this.saldo -= valor;
     }
 
