@@ -22,7 +22,6 @@ class CuentaTest {
 
     }
 
-
     @Test
     void testNombreVacio() {
         assertThrows(
@@ -33,7 +32,6 @@ class CuentaTest {
 
 
     }
-
 
     @Test
     void testApellidoVacio() {
@@ -65,7 +63,6 @@ class CuentaTest {
                 });
     }
 
-
     @Test
     void saldoNegativo() {
         assertThrows(
@@ -82,12 +79,17 @@ class CuentaTest {
 
     @Test
     void depositar() {
+        //Arrange
         Cuenta cuenta = new Cuenta(
                 "Cliente1",
                 "Mechiné",
                 "78784",
                 50);
+
+        //Act
         cuenta.depositar(10);
+
+        //Assert
         assertEquals(60, cuenta.getSaldo());
     }
 
