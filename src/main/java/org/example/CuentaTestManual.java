@@ -6,7 +6,7 @@ import org.example.excepciones.ValorInvalidoException;
 /**
  * Pruebas básicas de validación de la clase Cuenta.
  */
-public class CuentaTest {
+public class CuentaTestManual {
     /**
      * Ejecuta la batería de pruebas del caso de uso principal.
      */
@@ -16,13 +16,20 @@ public class CuentaTest {
         testSaldoNegativo();
         testNombreVacio();
         testApellidoVacio();
+        testNombreNulo();
+        testApellidoNulo();
     }
 
     /**
      * Verifica que una cuenta válida puede crearse con saldo positivo.
      */
     static void testHappyPath(){
-        Cuenta cuenta = new Cuenta("Cliente1", "Mechiné","123456",150);
+        try {
+            Cuenta cuenta = new Cuenta("Cliente1", "Mechiné","123456",150);
+            System.out.println("Test de happypath ok");
+        } catch (Exception e) {
+            IO.println("Error en test de happypath");
+        }
     }
 
     /**
@@ -61,6 +68,25 @@ public class CuentaTest {
             IO.println("Error test Apellido vacio");
         } catch (ConstruccionCuentaException e) {
             IO.println("Test de Apellido vacio ok");
+        }
+    }
+
+    static void testNombreNulo(){
+
+        try {
+            Cuenta cuenta = new Cuenta(null, "Mechiné","123456",150);
+            IO.println("Error test nombre nulo");
+        } catch (ConstruccionCuentaException e) {
+            IO.println("Test de nombre nulo ok");
+        }
+    }
+    static void testApellidoNulo(){
+
+        try {
+            Cuenta cuenta = new Cuenta("Cliente2", null,"123456",150);
+            IO.println("Error test apellido nulo");
+        } catch (ConstruccionCuentaException e) {
+            IO.println("Test de apellido nulo ok");
         }
     }
 
