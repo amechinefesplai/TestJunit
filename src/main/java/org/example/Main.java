@@ -5,7 +5,9 @@ import org.example.excepciones.ValorInvalidoException;
 import org.example.notificaciones.interfaces.Notificacion;
 import org.example.notificaciones.NotificarMail;
 
-
+/**
+ * Punto de entrada de la aplicación bancaria.
+ */
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 void main() throws ConstruccionCuentaException, ValorInvalidoException {

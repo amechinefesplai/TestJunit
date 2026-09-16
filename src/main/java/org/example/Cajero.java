@@ -3,6 +3,9 @@ package org.example;
 import org.example.excepciones.ValorInvalidoException;
 import org.example.notificaciones.interfaces.Notificacion;
 
+/**
+ * Encargado de realizar transferencias entre cuentas y enviar notificaciones.
+ */
 public class Cajero {
     Notificacion notificar;
     public Cajero (Notificacion tipoNotificacion){

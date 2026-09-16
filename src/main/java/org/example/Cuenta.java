@@ -5,6 +5,9 @@ import org.example.excepciones.ValorInvalidoException;
 
 import java.util.Objects;
 
+/**
+ * Representa una cuenta bancaria con datos del cliente y saldo disponible.
+ */
 public class Cuenta {
     private String nombreCliente;
     private String apellidoCliente;
